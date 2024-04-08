@@ -4,6 +4,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { Product } from '../../types/types';
 import Image from 'next/image';
 import { CartContext } from '@/services/cart-context';
+import   styles from './[id].module.css';
 
 interface Props {
   product: Product;
@@ -21,14 +22,17 @@ const ProductDetail: React.FC<Props> = ({ product }) => {
       return <div>Loading...</div>;
     }
   return (
-    <div>
-         <span className="image"> 
-      <h1>{product.title || 'Product Detail'}</h1>
+    <div className={styles.grid}>
+         <span className={styles.image}> 
+      <h1>{product.title || 'Product title missing'}</h1>
    
     <Image src={product.image} alt={product.title} width={100} height={100} />
       <a href="#specs">see specifications</a>
       </span> 
-      <span className="card">
+      <span className={styles.card}>
+        <h3>{product.title || 'title missing'}</h3>
+      <p>${product.price}</p>
+      <button onClick={() => {addToCart(product); alert('Product is added to cart')}}>Buy Now</button>
       <details open>
         <summary>Description</summary>
         <p dangerouslySetInnerHTML={{ __html: product.description }}></p>
@@ -45,8 +49,7 @@ const ProductDetail: React.FC<Props> = ({ product }) => {
     ))}
   </dl>
       </details>
-      <p>${product.price}</p>
-      <button onClick={() => {addToCart(product); alert('Product is added to cart')}}>Buy Now</button>
+
       </span>
     </div>
   );

@@ -1,6 +1,7 @@
 
 import ProductList from "@/components/product-list";
 import mockData from "../../public/mock-data/Washing Machines PDP.json";
+import Header from "@/components/header";
 
 
 interface Product {
@@ -18,7 +19,7 @@ export default function Home() {
   }));
 
   return <>
-  {/* <Header products={[]} /> */}
+
   <ProductList products={products} />
   </>;
 }

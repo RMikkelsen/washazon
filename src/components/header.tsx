@@ -3,9 +3,10 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import { Product } from '../types/types';
 import { CartContext } from '@/services/cart-context';
+import style from '../styles/header.module.css'
 
 interface Props {
-  products: Product[];
+  products?: Product[];
 }
 
 const Header: React.FC<Props> = ({ products }) => {
@@ -20,7 +21,7 @@ const Header: React.FC<Props> = ({ products }) => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
-    const product = products.find(
+    const product = products?.find(
       (product) => product.title.toLowerCase() === search.toLowerCase()
     );
 
@@ -30,7 +31,7 @@ const Header: React.FC<Props> = ({ products }) => {
   };
 
   return (
-    <header>
+    <header className={style.headerLine}>
       <h1>My Store</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -39,9 +40,9 @@ const Header: React.FC<Props> = ({ products }) => {
           value={search}
           onChange={handleSearch}
         />
-      </form>
+      </form><span> 
       <FaShoppingCart />
-      <span>{cart.length}</span>
+    {cart.length}</span>
     </header>
   );
 };

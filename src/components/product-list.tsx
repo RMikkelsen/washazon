@@ -6,6 +6,7 @@ import { GetStaticProps } from 'next';
 import { Product } from '../../src/types/types';
 import Image from 'next/image';
 import mockData from '../../public/mock-data/Washing Machines PDP.json';
+import Header from './header';
 
 
 
