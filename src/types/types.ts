@@ -9,7 +9,7 @@ export interface Spec {
   
   export interface Product {
     id: number;
-    title: string;
+    name: string;
     description: string;
     price: number;
     image: string;
