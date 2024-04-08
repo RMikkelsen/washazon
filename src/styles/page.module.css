@@ -1,12 +1,12 @@
-.main {
+/* .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
-}
-
+} */
+/* 
 .description {
   display: inherit;
   justify-content: inherit;
@@ -37,16 +37,35 @@
 .code {
   font-weight: 700;
   font-family: var(--font-mono);
+} */
+
+/* .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "image card";
+  gap: 2rem;
+  margin-bottom: 160px;
+  max-width: var(--max-width);
+  width: 100%;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
-  max-width: 100%;
-  width: var(--max-width);
+.image {
+  grid-area: image;
+  max-width: 300px;
+  max-height: 300px;
 }
 
 .card {
+  grid-area: card;
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+} */
+
+
+/* .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
@@ -71,8 +90,8 @@
   line-height: 1.5;
   max-width: 30ch;
   text-wrap: balance;
-}
-
+} */
+/* 
 .center {
   display: flex;
   justify-content: center;
@@ -107,9 +126,9 @@
 
 .logo {
   position: relative;
-}
+} */
 /* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
   .card:hover {
     background: rgba(var(--card-rgb), 0.1);
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
@@ -201,7 +220,7 @@
     );
     z-index: 1;
   }
-}
+} */
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {

@@ -1,0 +1,23 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "image card";
+    gap: 2rem;
+  }
+  
+  .image {
+    grid-area: image;
+    /* max-width: 300px;
+    max-height: 300px; */
+  }
+  
+  .card {
+    grid-area: card;
+    padding: 1rem 1.2rem;
+    border-radius: var(--border-radius);
+    background: rgba(var(--card-rgb), 0);
+    border: 1px solid rgba(var(--card-border-rgb), 0);
+   
+  }
+  
+  
