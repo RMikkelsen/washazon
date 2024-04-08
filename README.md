@@ -1,3 +1,10 @@
+
+This project was built with next.js, and typscript. 
+This version of npm supports the following node versions: `^18.17.0 || >=20.5.0`
+run: npm run build, then you can start your application in production mode with npm start
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

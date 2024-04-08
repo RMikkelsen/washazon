@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { Product } from "../types/types";
 import { CartContext } from "@/services/cart-context";
 import style from "../styles/header.module.css";
+import Link from 'next/link';
 
 interface Props {
   products?: Product[];
@@ -11,34 +12,19 @@ interface Props {
 
 const Header: React.FC<Props> = ({ products }) => {
   const { cart } = useContext(CartContext);
-  const [search, setSearch] = useState("");
+ 
   const router = useRouter();
 
-  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(event.target.value);
-  };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-
-    const product = products?.find(
-      (product) => product.name.toLowerCase() === search.toLowerCase()
-    );
-
-    if (product && typeof window !== "undefined") {
-      router.push(`/product/${product.id}`);
-    }
-  };
 
   return (
     <header className={style.headerLine}>
-      <h1>Washazon</h1>
-      <form onSubmit={handleSubmit}>
+      <Link href="/" className={style.title}><h1>Washazon</h1></Link>
+      <form >
         <input
           type="search"
           placeholder="Search products"
-          value={search}
-          onChange={handleSearch}
+        
         />
       </form>
       <span>

@@ -1,4 +1,3 @@
-// pages/product/[id].tsx
 import React, { useEffect, useState, useContext } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { Product } from "../../types/types";
@@ -88,6 +87,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
+    // renders 404
     fallback: false,
   };
 };
