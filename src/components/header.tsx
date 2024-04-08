@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import { Product } from '../types/types';
+import { CartContext } from '@/services/cart-context';
 
 interface Props {
   products: Product[];
 }
 
 const Header: React.FC<Props> = ({ products }) => {
+    const { cart } = useContext(CartContext);
   const [search, setSearch] = useState('');
   const router = useRouter();
 
@@ -29,7 +31,7 @@ const Header: React.FC<Props> = ({ products }) => {
 
   return (
     <header>
-      <h1>Washazon</h1>
+      <h1>My Store</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="search"
@@ -39,6 +41,7 @@ const Header: React.FC<Props> = ({ products }) => {
         />
       </form>
       <FaShoppingCart />
+      <span>{cart.length}</span>
     </header>
   );
 };

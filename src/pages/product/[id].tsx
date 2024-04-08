@@ -1,8 +1,9 @@
 // pages/product/[id].tsx
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { Product } from '../../types/types';
 import Image from 'next/image';
+import { CartContext } from '@/services/cart-context';
 
 interface Props {
   product: Product;
@@ -10,6 +11,7 @@ interface Props {
 
 const ProductDetail: React.FC<Props> = ({ product }) => {
     const [isClient, setIsClient] = useState(false);
+    const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
       setIsClient(true);
@@ -44,7 +46,7 @@ const ProductDetail: React.FC<Props> = ({ product }) => {
   </dl>
       </details>
       <p>${product.price}</p>
-      <button>Buy Now</button>
+      <button onClick={() => {addToCart(product); alert('Product is added to cart')}}>Buy Now</button>
       </span>
     </div>
   );
