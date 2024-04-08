@@ -16,6 +16,7 @@ const ProductList: React.FC<{ products: Product[] }> = ({ products }) => {
           <li key={product.id} className={style.listItems}>
             <Link href={`/product/${product.id}`}>
               <Image
+              className={style.productImage}
                 src={product.image}
                 alt={product.name}
                 width={100}
